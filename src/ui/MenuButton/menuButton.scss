@@ -1,0 +1,40 @@
+.menu-button {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #EFEFF4;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #EFEFF4;
+  }
+
+  .menu-line {
+    position: absolute;
+    height: 4px;
+    background-color: #676767;
+
+    &.line-top {
+      width: 40px;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -35%);
+    }
+
+    &.line-middle {
+      width: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.line-bottom {
+      width: 40px;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, -65%);
+    }
+  }
+}

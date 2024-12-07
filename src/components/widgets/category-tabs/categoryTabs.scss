@@ -1,0 +1,31 @@
+.category-tabs{
+    margin-top: 30px;
+    .swiper{
+        display: flex;
+    }
+    .swiper-wrapper{
+        display: flex;
+        align-items: center;
+    }
+    .swiper-slide {
+      width: auto !important;
+    }
+}
+
+.category-tabs__item {
+    padding: 10px 17px;
+    border-radius: 50px;
+    white-space: nowrap;
+    background: #efeff4;
+    color: #707579;
+    display: inline-block;
+    text-align: center;
+    font-family: var(--font-raleway);
+    font-weight: 700;
+    transition: all .3s ease;
+}
+.category-tabs__item.active {
+    background: #9090ff;
+    color: #fff;
+}
+  

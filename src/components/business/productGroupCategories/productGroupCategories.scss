@@ -1,0 +1,35 @@
+.product-group{
+    margin: 40px 0;
+    padding: 0 20px;
+    &__body{
+
+    }
+    
+    &__titles{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 10px;
+        margin-bottom: 10px;
+        h1{
+            font-family: var(--font-raleway);
+            font-size: 26px;
+            font-weight: 700;
+        }
+        a{
+            color: #FF0026;
+            text-wrap: nowrap;
+        }
+    }
+
+    .swiper-wraper{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .swiper-slide{
+        width: 47% !important;
+    }
+    
+}
+

@@ -1,0 +1,53 @@
+.catalog-product{
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 15px;
+    margin-top: 10px;
+    font-family: var(--font-raleway);
+
+    img{
+        border-radius: 22px;
+    }
+
+    &__title, 
+    &__price{
+        font-size: 20px;
+        font-weight: 500;
+        -webkit-line-clamp: 2; /* Число отображаемых строк */
+        display: -webkit-box; /* Включаем флексбоксы */
+        -webkit-box-orient: vertical; /* Вертикальная ориентация */
+        overflow: hidden; /* Обрезаем всё за пределами блока */
+    }
+    &__price{
+        font-family: var(--font-inter);
+        color: #707579;
+    }
+    &__title{
+        font-family: var(--font-raleway);
+    }
+    &__desc{
+        font-weight: 500;
+        -webkit-line-clamp: 2; /* Число отображаемых строк */
+        display: -webkit-box; /* Включаем флексбоксы */
+        -webkit-box-orient: vertical; /* Вертикальная ориентация */
+        overflow: hidden; /* Обрезаем всё за пределами блока */
+    }
+
+    &__btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        color: #fff;
+        background: #FF0026;
+        font-family: var(--font-raleway);
+        font-weight: 700;
+        border-radius: 20px;
+        span{
+            font-weight: 300;
+            font-size: 35px;
+        }
+    }
+}
