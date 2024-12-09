@@ -1,7 +1,6 @@
 // react-dependencies
 import { FC } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 // Zustand
 
@@ -29,9 +28,11 @@ const CatalogProduct: FC<IProduct> = ({
 
 
     return (
-        <div className="catalog-product" key={id}>
+        <div className="catalog-product">
             <img src="https://static14.tgcnt.ru/posts/_0/ec/ecd056e3fd47e7cbec8bb98fde358cd3.jpg" alt="" />
-            <h3 className="catalog-product__title">{name}</h3>
+            <Link href={`/product/${id}`} className="catalog-product__title">
+                {name}
+            </Link>
             <p className="catalog-product__desc">{desc}</p>
             <p className="catalog-product__price">{price} руб</p>
             <button className="catalog-product__btn">Добавить <span>+</span></button>

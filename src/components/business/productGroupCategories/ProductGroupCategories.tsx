@@ -54,7 +54,7 @@ const ProductGroupCategories = ({categoryId, categoryName, products} : {category
             }
         },
         {
-            threshold: .1,
+            threshold: .7,
             rootMargin: "0px 0px 0% 0px"
         }
     );
@@ -64,7 +64,7 @@ const ProductGroupCategories = ({categoryId, categoryName, products} : {category
 
 
     return (
-        <div className="product-group" key={categoryId} ref={intersectionRef}>
+        <div className="product-group" key={categoryId} ref={intersectionRef} id={String(categoryId)}>
 
             <div className="product-group__titles">
                 <h1>{categoryName}</h1>

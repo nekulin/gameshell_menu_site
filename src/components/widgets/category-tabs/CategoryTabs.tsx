@@ -3,6 +3,8 @@
 // react-dependencies
 import { FC, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import Link from 'next/link';
 
 // Server Actionsa
 
@@ -41,10 +43,10 @@ const CategoryTabs: FC<ICategoryTabs> = ({categories}) => {
     return (
         <div className="category-tabs">
             <Swiper
-                spaceBetween={20}
-                slidesPerView={3}
-                slidesPerGroup={2}
+                spaceBetween={8}
+                slidesPerView="auto"
                 loop={false}
+                freeMode={true}
                 centeredSlides={false}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -53,11 +55,12 @@ const CategoryTabs: FC<ICategoryTabs> = ({categories}) => {
                         categories && categories.map((category) => {
                             return (
                                 <SwiperSlide key={category.id}>
-                                    <div 
+                                    <Link 
+                                        href={'#'+category.id}
                                         className={categoryTabsId !== category.id ? "category-tabs__item" : "category-tabs__item active"}
                                     >
                                         {category.name}
-                                    </div>
+                                    </Link>
                                 </SwiperSlide>
                             )
                         })

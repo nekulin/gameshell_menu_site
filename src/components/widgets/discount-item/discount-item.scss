@@ -1,0 +1,41 @@
+.discount{
+    position: relative;
+    height: 80px;
+    padding: 12px 20px;
+    background: #FBEABF;
+    border-radius: 20px;
+
+    &__text{
+        color: #828282;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    &__steps{
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+    &__num-step{
+        padding: 3px 12px;
+        font-size: 17px;
+        font-weight: 700;
+        background: #fff;
+        border-radius: 50%;
+    }
+    &__text-step{
+        padding: 2px 20px;
+        font-size: 17px;
+        font-weight: 700;
+        background: #fff;
+        border-radius: 30px;
+        text-transform: uppercase;
+    }
+
+    img{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

@@ -4,6 +4,7 @@
         overflow-y: auto;
     }
 
+    
     .order-btn{
         position: absolute;
         z-index: 2;
@@ -14,7 +15,7 @@
         flex-direction: column;
         align-items: center;
         background: #000;
-        padding: 14px 120px;
+        padding: 12px 120px;
         text-align: center;
         text-wrap: nowrap;
         border-radius: 100px;
@@ -26,5 +27,4 @@
             color: #A2ACB0;
         }
     }
-
 }

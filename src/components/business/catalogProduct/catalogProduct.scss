@@ -1,5 +1,5 @@
 .catalog-product{
-    min-height: 430px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,18 +14,19 @@
     &__title, 
     &__price{
         font-size: 20px;
-        font-weight: 500;
-        -webkit-line-clamp: 2; /* Число отображаемых строк */
+        -webkit-line-clamp: 1; /* Число отображаемых строк */
         display: -webkit-box; /* Включаем флексбоксы */
         -webkit-box-orient: vertical; /* Вертикальная ориентация */
         overflow: hidden; /* Обрезаем всё за пределами блока */
     }
     &__price{
         font-family: var(--font-inter);
+        font-weight: 500;
         color: #707579;
     }
     &__title{
         font-family: var(--font-raleway);
+        font-weight: 700;
     }
     &__desc{
         font-weight: 500;
@@ -36,15 +37,17 @@
     }
 
     &__btn{
+        max-width: 130px;
         display: flex;
         align-items: center;
         justify-content: center;
         column-gap: 10px;
+        padding: 0px 18px;
         color: #fff;
         background: #FF0026;
         font-family: var(--font-raleway);
         font-weight: 700;
-        border-radius: 20px;
+        border-radius: 50px;
         span{
             font-weight: 300;
             font-size: 35px;

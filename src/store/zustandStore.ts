@@ -4,10 +4,12 @@ import { immer } from 'zustand/middleware/immer';
 
 type State = {
   categoryTabsId: number
+  openMenu: boolean
 }
 
 type Action = {
   setCategoryTabsId: (newId:number) => void
+  setOpenMenu: (newStatus:boolean) => void
 }
 
 const useZustandStore = create<State & Action>()(
@@ -22,6 +24,12 @@ const useZustandStore = create<State & Action>()(
       })
     },
 
+    openMenu: false,
+    setOpenMenu: (newStatus) => {
+      set((state) => {
+        state.openMenu = newStatus
+      })
+    },
 
     })),
     

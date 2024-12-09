@@ -1,11 +1,23 @@
 import { FC, useState } from "react";
 import { motion, MotionConfig } from "framer-motion";
 
+// Zustand
+import useZustandStore from "@/store/zustandStore";
 
 
 
 export const MenuButton: FC = (): JSX.Element => {
+
     const [active, setActive] = useState(false);
+    const {openMenu, setOpenMenu} = useZustandStore(state => state)
+
+
+    const menuHandle = () => {
+      setActive((pv) => !pv)
+      setOpenMenu(!openMenu)
+    }
+
+
     return (
       <MotionConfig
         transition={{
@@ -16,7 +28,7 @@ export const MenuButton: FC = (): JSX.Element => {
         <motion.button
           initial={false}
           animate={active ? "open" : "closed"}
-          onClick={() => setActive((pv) => !pv)}
+          onClick={menuHandle}
           className="relative h-10 w-10 rounded-full bg-gray-200 transition-colors"
         >
           <motion.span

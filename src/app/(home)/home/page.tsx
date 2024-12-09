@@ -7,7 +7,12 @@ import { motion } from 'framer-motion';
 // Server Actionsa
 import { getAllProducts } from '@/app/actions';
 
+// Zustand
+import useHeaderStore from '@/store/headerStore';
+import useZustandStore from '@/store/zustandStore';
+
 // Components
+import Menu from '@/components/widgets/dropdown-menu/Menu';
 import CategoryTabs from '@/components/widgets/category-tabs/CategoryTabs';
 import ProductGroupCategories from '@/components/business/productGroupCategories/ProductGroupCategories';
 
@@ -35,15 +40,29 @@ interface IProduct {
 
 const Home: FC = () => {
 
+    // Для обновления header-a (общего на все страницы  и  логика меню
+    const {setHeaderState, setLoadingState} = useHeaderStore((state) => state)
+    const openMenu = useZustandStore(state => state.openMenu)
+
+
     const [products, setProducts] = useState<any>([]);
     const [categories, setCategories] = useState<any>([]);
 
     const getProducts = async () => {
+        setLoadingState(true)
         const result = await getAllProducts();
 
         setProducts(result.products)
         setCategories(result.categories)
         console.log('RESULT - ', result)
+
+        const headerState = {
+            leftIcon: "menu",
+            title: "Всё меню",
+            showSearchIcon: true
+        }
+        setHeaderState(headerState)
+        setLoadingState(false)
     }
 
     useEffect(() => {
@@ -59,6 +78,8 @@ const Home: FC = () => {
             exit={{opacity: 0}}
             transition={{duration: 2, type: "spring"}}
         >
+
+            <Menu/>
 
             <section className="products">
 
