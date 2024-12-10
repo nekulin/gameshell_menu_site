@@ -88,7 +88,7 @@ const Home: FC = () => {
                 <div className="products__main">
                     {
                         
-                        categories.length > 0
+                        categories && categories.length > 0
                                                 ?
                         categories.map((category: ICategory) => (
                             <ProductGroupCategories key={category.id} categoryId={category.id} categoryName={category.name} products={products.filter((product: IProduct) => product.menu_category_id === category.id)}/>
