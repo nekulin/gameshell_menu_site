@@ -13,7 +13,7 @@ type Action = {
 }
 
 const useZustandStore = create<State & Action>()(
-    persist(immer((set) => ({
+    immer((set) => ({
 
 
     // id-шник, который будет записываться в записимости от того - какая категория товаров на экране (через хук useIntersectionObserver)
@@ -32,11 +32,6 @@ const useZustandStore = create<State & Action>()(
     },
 
     })),
-    
-      {
-        name: 'zustand-store',
-      }
-    )
 );
 
 export default useZustandStore;
