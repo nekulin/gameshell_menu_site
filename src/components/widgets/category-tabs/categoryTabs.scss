@@ -1,5 +1,5 @@
 .category-tabs{
-    margin-top: 30px;
+    margin-top: 20px;
 
     .swiper-slide {
         width: auto !important; /* Слайды подстраиваются под содержимое */
@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 .category-tabs__item.active {
-    background: #9090ff;
+    background: #000000;
     color: #fff;
 }
   

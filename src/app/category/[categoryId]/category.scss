@@ -7,8 +7,19 @@
         row-gap: 24px;
     }
 
+    .products-main{
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .products-main--one{
+        .product-group__titles{
+            display: none;
+        }
+    }
+
     .catalog-product{
-        min-height: 400px;
+        min-height: 420px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

@@ -12,7 +12,7 @@ import Skeleton from '@mui/material/Skeleton';
 
 // Components
 import { MenuButton } from "@/ui/MenuButton/MenuButton"
-import { SearchInput } from "@/ui/SearchInput/SearchInput"
+// import { SearchInput } from "@/ui/SearchInput/SearchInput"
 
 // project's styles/img/icons
 import BackIcon from '@/assets/icons/back-icon.svg'
@@ -49,17 +49,15 @@ const Header:FC = ():JSX.Element => {
                         </button>
                     }
 
-                        <div className="header__title">
-                            <h1>{title}</h1>
-                        </div>
-
+                    <h1 className="header__title">{title}</h1>
+{/* 
                     {
                         showSearchIcon 
                                         ?
                         <SearchInput/>
                                         :
                         ""
-                    }
+                    } */}
 
                 </div>
                 

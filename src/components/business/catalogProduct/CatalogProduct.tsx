@@ -1,15 +1,22 @@
 // react-dependencies
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import Link from 'next/link';
+
+// Server Actions
 
 // Zustand
 
+// Components
+import MoovingCartBtn from '@/components/widgets/mooving-cart-btn/MoovingCartBtn';
+
 // MUI-components
+import Skeleton from '@mui/material/Skeleton';
 
 // types (ZOD + TS)
 
 // project's styles/img
 import './catalogProduct.scss'
+
 
 interface IProduct {
     id: number,
@@ -33,9 +40,10 @@ const CatalogProduct: FC<IProduct> = ({
             <Link href={`/product/${id}`} className="catalog-product__title">
                 {name}
             </Link>
-            <p className="catalog-product__desc">{desc}</p>
+            <p className="catalog-product__desc">Идеальное начало дня с творогом и вареньем</p>
             <p className="catalog-product__price">{price} руб</p>
-            <button className="catalog-product__btn">Добавить <span>+</span></button>
+
+            <MoovingCartBtn id={id} />
         </div>
     )
 }

@@ -4,7 +4,6 @@
 import { FC, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Link from 'next/link';
 
 // Server Actionsa
 
@@ -22,10 +21,11 @@ interface ICategoryTabs {
         parent_id: number | null,
         name: string
     }]
+    handleTabsClick: (id: number) => void
 }
 
 
-const CategoryTabs: FC<ICategoryTabs> = ({categories}) => {
+const CategoryTabs: FC<ICategoryTabs> = ({categories, handleTabsClick}) => {
 
     const categoryTabsId = useZustandStore((state) => state.categoryTabsId)
 
@@ -55,12 +55,13 @@ const CategoryTabs: FC<ICategoryTabs> = ({categories}) => {
                         categories && categories.map((category) => {
                             return (
                                 <SwiperSlide key={category.id}>
-                                    <Link 
-                                        href={'#'+category.id}
+                                    <button 
                                         className={categoryTabsId !== category.id ? "category-tabs__item" : "category-tabs__item active"}
+                                        onClick={() => handleTabsClick(category.id)}
+                                        id={category.id.toString()}
                                     >
                                         {category.name}
-                                    </Link>
+                                    </button>
                                 </SwiperSlide>
                             )
                         })

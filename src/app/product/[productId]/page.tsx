@@ -12,9 +12,12 @@ import { getAllProducts } from '@/app/actions';
 
 // Zustand
 import useHeaderStore from '@/store/headerStore';
+import useCartStore from '@/store/cartStore';
 
 // Components
 import CatalogProduct from '@/components/business/catalogProduct/CatalogProduct';
+import OrderBtn from '@/components/widgets/order-btn/OrderBtn';
+import MoovingCartBtn from '@/components/widgets/mooving-cart-btn/MoovingCartBtn';
 
 // MUI
 import { Divider } from '@mui/material';
@@ -45,10 +48,11 @@ const Product: FC = () => {
 
     // Для обновления header-a (общего на все страницы
     const {setHeaderState, setLoadingState} = useHeaderStore((state) => state)
+    const {totalPrice, setTotalPrice, setCart} = useCartStore((state) => state)
 
     
     const pathname = usePathname()
-    const productId = pathname.split('/')[2]
+    const productId = Number(pathname.split('/')[2])
 
     
     // данные 1го товара и данные первых 4х товаров из той же категории, что этот товар
@@ -60,7 +64,7 @@ const Product: FC = () => {
         setLoadingState(true)
         const result = await getAllProducts();
 
-        const productData = result.products.filter((product: IProduct) => product.id === Number(productId))[0]
+        const productData = result.products.filter((product: IProduct) => product.id === productId)[0]
 
 
         const categoryId = productData.menu_category_id
@@ -75,7 +79,6 @@ const Product: FC = () => {
         const headerState = {
             leftIcon: "back",
             title: '',
-            showSearchIcon: false
         }
         setHeaderState(headerState)
         setLoadingState(false)
@@ -84,6 +87,7 @@ const Product: FC = () => {
     useEffect(() => {
         getProduct();
     }, [])
+
 
 
     return (
@@ -116,13 +120,11 @@ const Product: FC = () => {
                             </p>
                             <div className="product__order">
                                 <p>{productData?.price} руб</p>
-                                <button className="product__btn">Добавить <span>+</span></button>
+                                <MoovingCartBtn id={productId}/>
                             </div>
                         </div>
 
-                        <button className="order-btn">
-                            Добавить в заказ
-                        </button>
+                        <OrderBtn text={'Заказать'} />
 
                         <Divider/>
 

@@ -18,28 +18,21 @@ import CatalogProduct from '../catalogProduct/CatalogProduct';
 // project's styles/img
 import './productGroupCategories.scss'
 
-interface TProductsData {
-    products: [
-        id: number,
-        name: string,
-        desc: string,
-        weight: number,
-        weight_unit: string,
-        price: number,
-        price_value: string,
-        menu_category_id: number,
-    ]
-}
 
 interface IProduct {
     id: number,
     name: string,
     desc: string,
+    weight: number,
+    weight_unit: string,
     price: number,
+    price_value: string,
+    menu_category_id: number,
+    menu_root_category_id: number,
 }
 
 
-const ProductGroupCategories = ({categoryId, categoryName, products} : {categoryId: number, categoryName: string, products: TProductsData}): JSX.Element => {
+const ProductGroupCategories = ({categoryId, categoryName, products} : {categoryId: number, categoryName: string, products: IProduct[]}): JSX.Element => {
 
 
     const {setCategoryTabsId, categoryTabsId} = useZustandStore((state) => state)
@@ -54,7 +47,7 @@ const ProductGroupCategories = ({categoryId, categoryName, products} : {category
             }
         },
         {
-            threshold: .7,
+            threshold: .9,
             rootMargin: "0px 0px 0% 0px"
         }
     );
@@ -64,7 +57,7 @@ const ProductGroupCategories = ({categoryId, categoryName, products} : {category
 
 
     return (
-        <div className="product-group" key={categoryId} ref={intersectionRef} id={String(categoryId)}>
+        <div className="product-group" key={categoryId} ref={intersectionRef} id={`category-${categoryId}`}>
 
             <div className="product-group__titles">
                 <h1>{categoryName}</h1>
@@ -73,8 +66,11 @@ const ProductGroupCategories = ({categoryId, categoryName, products} : {category
 
             <div className="product-group__body">
                  <Swiper
-                    spaceBetween={20} // Пробел между слайдами
-                    slidesPerView={2} // Количество видимых слайдов
+                    spaceBetween={20}
+                    slidesPerView="auto"
+                    loop={false}
+                    freeMode={true}
+                    centeredSlides={false}
                 >
                     {
                         products && products.map((product: IProduct) => (

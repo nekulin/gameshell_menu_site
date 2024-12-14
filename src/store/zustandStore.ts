@@ -4,7 +4,7 @@ import { immer } from 'zustand/middleware/immer';
 
 type State = {
   categoryTabsId: number
-  openMenu: boolean
+  openMenu: boolean,
 }
 
 type Action = {

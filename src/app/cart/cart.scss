@@ -1,0 +1,133 @@
+.cart{
+    font-family: var(--font-raleway);
+    &__main{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 20px;
+        height: 75vh;
+    }
+
+    &__options{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+
+    &__products{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        max-height: 480px;
+        overflow: scroll;
+    }
+    &__product{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 18px;
+        img{
+            width: 85px;
+            height: 85px;
+            border-radius: 22px;
+        }
+        .cart__product-info{
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            h3{
+                font-size: 18px;
+                font-weight: 700;
+            }
+            p{
+                color: #828282;
+                font-size: 14px;
+            }
+        }
+        .cart__product-price{
+            margin-top: auto;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+
+
+    &__switches{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .switch{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            font-weight: 700;
+        }
+    }
+
+
+    &__price{
+        display: flex;
+        justify-content: space-between;
+        h3{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        div{
+            display: flex;
+            column-gap: 10px;
+            font-size: 18px;
+            font-family: var(--font-inter);
+            font-weight: 500;
+        }
+        .cart__price-bonus{
+            color: #828282;
+            text-decoration: line-through;
+        }
+        .cart__price-main{  
+
+        }
+    }
+
+
+    &__empty{
+        h1{
+
+        }
+    }
+
+    .animate-dialog{
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+        background: #ffe0e0;
+        border-radius: 10px;
+        h1{
+            font-size: 28px;
+            font-weight: 700;
+        }
+        p{
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+
+
+    .order-btn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #FF0026;
+        color: #fff;
+        padding: 14px 100px;
+        text-align: center;
+        font-weight: 700;
+        text-wrap: nowrap;
+        border-radius: 100px;
+    }
+
+}

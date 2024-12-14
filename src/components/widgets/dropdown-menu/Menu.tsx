@@ -59,17 +59,17 @@ const Menu: FC = (): JSX.Element => {
                 <div className="menu__product">
                     <h4>Экзотический дым</h4>
                     <p>От 1200 руб</p>
-                    {/* <img src="/images/menu-product_1.png" alt="Продукт" /> */}
+                    <img src="/images/menu-product_1.png" alt="Продукт" />
                 </div>
                 <div className="menu__product">
                     <h4>Завтраки сейчас</h4>
                     <p>От 300 руб</p>
-                    {/* <img src="/images/menu-product_2.png" alt="Продукт" /> */}
+                    <img src="/images/menu-product_2.png" alt="Продукт" />
                 </div>
                 <div className="menu__product">
                     <h4>PlayStation Безлимит</h4>
                     <p>В ВИП комнатах включено в депозит</p>
-                    {/* <img src="/images/menu-product_3.png" alt="Продукт" /> */}
+                    <img src="/images/menu-product_3.png" alt="Продукт" />
                 </div>
             </div>
         </div>

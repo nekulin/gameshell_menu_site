@@ -1,0 +1,17 @@
+.table-info{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    padding: 9px 20px;
+    background: #FFF1EC;
+    border-radius: 20px;
+    font-family: var(--font-raleway);
+    font-size: 13px;
+    font-weight: 700;
+    p{
+        color: #828282;
+    }
+    a{
+        color: #FF0026;
+    }
+}
